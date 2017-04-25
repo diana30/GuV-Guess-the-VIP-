@@ -19,12 +19,25 @@ include "core/database/connection.php"
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
+	
 <header class="header">
     <a href="index.php"><button class="button">Logout</button></a>
 </header>
 <div class="color">
-    There we play the game
+<div class="page">
+	<center><h3>Guess The star</h3><center>
+   <form action="game1.php">
+	   <img src="images.jpg"></img>
+	   <span class="scor">Your score: 0</span>
+	   <br>
+	   <span class="hint">Do you need a hit?</span>
+	   </br>
+	   <label>
+	  Insert the actor`s name: <input type="text"name="username"></input>
+	   </label>
+	   <button>OK</button><a href="gameG.php">.</a>      <a href="gameH.php">.</a>        <a href="gamePH.php">.</a>
+   </form>
+</div>
 </div>
 
 </body>

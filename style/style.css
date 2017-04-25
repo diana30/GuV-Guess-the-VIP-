@@ -16,7 +16,6 @@
 }
 
 .page {
-    padding-left: 20%;
     padding-top: 10%;
     font-size: x-large;
 }
@@ -70,4 +69,16 @@
 	margin-left: -15%;
 	font-size: 40px;
 	color: gold;
+}
+.scor{
+	float: right;
+}
+.gresit{
+	color: red;
+}
+.corect{
+	color:green;
+}
+.hint{
+	float: right;
 }

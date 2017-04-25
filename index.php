@@ -23,8 +23,8 @@ include "core/users.php";
 		<p class="message"> <?php if (isset($_GET['message'])) echo $_GET['message']; ?> </p>
         <h1> Top 10 player</h1>
         <ol>
-            <li>SiminaC</li>
-            <li>DianaD</li>
+            <li>a</li>
+            <li>b</li>
             <li>c</li>
             <li>d</li>
             <li>e</li>

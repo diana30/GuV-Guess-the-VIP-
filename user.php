@@ -16,6 +16,7 @@ include "core/users.php";
 <header class="header">
     <a href="logout.php" class="button"><b>Logout</b></a>
     <a href="changePass.php" class="button"><b>Change Password</b></a>
+    <a href="game.php" class="button"><b>Start game</b></a>
 </header>
 <div class="color">
     <div class="page">
