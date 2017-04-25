@@ -1,3 +1,7 @@
+<?php
+include "core/database/connection.php";
+include "core/users.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +14,17 @@
 <body>
 
 <header class="header">
-    <a href="logout.php" class="button"><b>Logout</b></a>
     <a href="register.php" class="button"><b>Register</b></a>
     <a href="login.php" class="button"><b>Login</b></a>
 </header>
-<div><br><br><br></div>
+
 <div class="color">
     <div class="page">
+		<p class="message"> <?php if (isset($_GET['message'])) echo $_GET['message']; ?> </p>
         <h1> Top 10 player</h1>
         <ol>
-            <li>a</li>
-            <li>b</li>
+            <li>SiminaC</li>
+            <li>DianaD</li>
             <li>c</li>
             <li>d</li>
             <li>e</li>

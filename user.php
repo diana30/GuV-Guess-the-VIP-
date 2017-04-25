@@ -1,3 +1,7 @@
+<?php
+include "core/database/connection.php";
+include "core/users.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +16,10 @@
 <header class="header">
     <a href="logout.php" class="button"><b>Logout</b></a>
     <a href="changePass.php" class="button"><b>Change Password</b></a>
-	</header>
-<div><br><br><br></div>
+</header>
 <div class="color">
     <div class="page">
+		<p class="message"> <b><?php if (isset($_GET['message'])) echo $_GET['message']; ?> </b></p>
         <h1> Top 10 player</h1>
         <ol>
             <li>a</li>
