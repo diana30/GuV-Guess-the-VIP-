@@ -11,8 +11,8 @@
 
 .color {
     background-image: url("background.jpg");
-	background-repeat: round;	
-	height: 100vh;
+    background-repeat: round;
+    height: 100vh;
 }
 
 .page {
@@ -20,11 +20,26 @@
     font-size: x-large;
 }
 
+ol{
+    padding-left: 10%;
+}
+
+ul{
+    padding-left: 10%;
+
+}
+
+img{
+    width: 300px;
+    height: 200px;
+}
+
 .button {
     color: #FFFFFF;
     width: 7%;
     float: right;
     border: none;
+    border-radius: 5%;
     text-decoration: none;
     padding-right: 1%;
     padding-left: 1%;
@@ -39,6 +54,7 @@
 .button:hover {
     cursor: pointer;
     color: #0a5bff;
+    background-color: #FFFFFF;
 }
 
 .login {
@@ -59,26 +75,81 @@
     height: 40px;
 }
 
-.error{
+.error {
     margin-left: 35%;
     font-size: 25px;
     color: #0ff50a;
 }
 
-.message{
-	margin-left: -15%;
-	font-size: 40px;
-	color: gold;
+.message {
+    font-size: 40px;
+    color: #DB2828;
 }
-.scor{
-	float: right;
+
+.scor {
+    float: right;
 }
-.gresit{
-	color: red;
+
+.gresit {
+    color: red;
 }
-.corect{
-	color:green;
+
+.corect {
+    color: green;
 }
-.hint{
-	float: right;
+
+.hint {
+    width: 15%;
+    font-size: 40px;
+    font-family: "Calibri";
+    background-color: #87CEFA;
+    border: none;
+    border-radius: 5%;
+    margin-bottom: 3%;
+    text-decoration: none;
+
+}
+
+.leftButton {
+    color: #FFFFFF;
+    width: 7%;
+    float: left;
+    border: none;
+    border-radius: 5%;
+    text-decoration: none;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    background-color: #112268;
+}
+
+.leftButton:hover {
+    cursor: pointer;
+    color: #0a5bff;
+    background-color: #FFFFFF;
+}
+
+.user{
+    font-size: 24px;
+    color: #112268;
+    padding-top: 2%;
+}
+
+.submit{
+    width: 5%;
+    background-color: #0229c5;
+    border: none;
+    border-radius: 5%;
+    height: 40px;
+    margin-top: 2%;
+}
+
+.actorName{
+    width: 20%;
+    height: 40px;
+    padding-left: 2%;
 }
