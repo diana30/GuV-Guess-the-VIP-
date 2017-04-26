@@ -1,4 +1,6 @@
 <?php
+?>
+<?php
 include "core/database/connection.php"
 ?>
 <!DOCTYPE html>
@@ -13,27 +15,29 @@ include "core/database/connection.php"
 <body>
 
 <header class="header">
-    <a href="index.php">
-        <button class="button">Logout</button>
-    </a>
+    <a href="index.php" class="button"><b>Logout</b></a>
+    <a href="user.php" class="button"><b>Home</b></a>
 </header>
 <div class="color">
     <div class="page">
-        <center><h3>Guess The star</h3>
-            <form>
-                <img src="index1.jpg"/>
+        <center>
+            <h3>Guess The star</h3>
+            <form action="gameH.php">
+                <img src="images.jpg"/>
                 <br>
-                <a href="hint.php" class="hint"><b> Hint</b></a>
-                <br><br>
+                <p> He played in "The Story of God" </p>
                 <label>
                     <input type="text" class="actorName" placeholder="Insert the actor`s name:" name="username"/>
                 </label>
                 <br>
                 <button class="submit">OK</button>
+                <br>
+                <a href="gameG.php">.</a> <a href="gameH.php">.</a> 
             </form>
-        </center>
+            <center>
     </div>
 </div>
 
 </body>
 </html>
+

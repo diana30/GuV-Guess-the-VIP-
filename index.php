@@ -20,19 +20,18 @@ include "core/users.php";
 
 <div class="color">
     <div class="page">
-		<p class="message"> <?php if (isset($_GET['message'])) echo $_GET['message']; ?> </p>
         <h1> Top 10 player</h1>
         <ol>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>d</li>
-            <li>e</li>
-            <li>f</li>
-            <li>g</li>
-            <li>g</li>
-            <li>h</li>
-            <li>i</li>
+            <li>SiminaC</li>
+            <li>DianaD</li>
+            <li>RalucaG</li>
+            <li>BocaB</li>
+            <li>RizaA</li>
+            <li>IrinaD</li>
+            <li>CosminaC</li>
+            <li>Popescu</li>
+            <li>Ionescu</li>
+            <li>Petrescu</li>
         </ol>
     </div>
 </div>

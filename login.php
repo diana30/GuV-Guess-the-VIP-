@@ -25,7 +25,7 @@ else {
             else {
                 $id = getIdByUsername($username);
                 $_SESSION["logat"] = $id ;
-                header("Location: user.php?message=Logged in ");
+                header("Location: user.php ");
             }
         } else array_push($err, "Username or password incorect");
     }

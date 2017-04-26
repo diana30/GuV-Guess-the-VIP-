@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Boca
- * Date: 21.04.2017
- * Time: 10:26
- */
 $error = array();
 ?>
 <!DOCTYPE html>

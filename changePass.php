@@ -44,7 +44,6 @@ if (isset($_POST["curPass"]) && isset($_POST["password"]) && isset($_POST["repas
 <body>
 
 <header class="header">
-    <a href="login.php" class="button">Login </a>
     <a href="user.php" class="button"> Home </a>
 </header>
 

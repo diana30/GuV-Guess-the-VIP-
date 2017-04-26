@@ -14,26 +14,20 @@ include "core/users.php";
 <body>
 
 <header class="header">
+    <a href="game.php" class="leftButton"><b>Let's play!</b></a>
+    <a href="rank.php" class="leftButton"><b>Rank</b></a>
     <a href="logout.php" class="button"><b>Logout</b></a>
     <a href="changePass.php" class="button"><b>Change Password</b></a>
-    <a href="game.php" class="button"><b>Start game</b></a>
 </header>
 <div class="color">
     <div class="page">
 		<p class="message"> <b><?php if (isset($_GET['message'])) echo $_GET['message']; ?> </b></p>
-        <h1> Top 10 player</h1>
-        <ol>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>d</li>
-            <li>e</li>
-            <li>f</li>
-            <li>g</li>
-            <li>g</li>
-            <li>h</li>
-            <li>i</li>
-        </ol>
+        <ul>
+        <li class="user"> username: test </li>
+        <li class="user"> intrebari raspunse: 4 </li>
+        <li class="user"> scor :  12 puncte</li>
+        <li class="user"> Te aflii pe locul 10.</li>
+        </ul>
     </div>
 </div>
 
