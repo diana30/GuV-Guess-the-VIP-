@@ -26,7 +26,7 @@ include "core/users.php";
         <li class="user"> username: test </li>
         <li class="user"> intrebari raspunse: 4 </li>
         <li class="user"> scor :  12 puncte</li>
-        <li class="user"> Te aflii pe locul 10.</li>
+        <li class="user"> Te afli pe locul 10.</li>
         </ul>
     </div>
 </div>
