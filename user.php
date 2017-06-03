@@ -23,10 +23,10 @@ include "core/users.php";
     <div class="page">
 		<p class="message"> <b><?php if (isset($_GET['message'])) echo $_GET['message']; ?> </b></p>
         <ul>
-        <li class="user"> username: test </li>
-        <li class="user"> intrebari raspunse: 4 </li>
-        <li class="user"> scor :  12 puncte</li>
-        <li class="user"> Te afli pe locul 10.</li>
+            <li class="user"> username: <?php echo  getNameById($_SESSION["logat"]) ;?> </li>
+        <li class="user"> intrebari raspunse: <?php echo  getQuestion($_SESSION["logat"]) ;?> </li>
+        <li class="user"> scor :  <?php echo  getScore($_SESSION["logat"]) ;?> puncte</li>
+        <li class="user"> Te afli pe locul <?php echo getUserRank($_SESSION["logat"]) ?>.</li>
         </ul>
     </div>
 </div>

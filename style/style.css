@@ -6,30 +6,25 @@
 .header {
     width: 100%;
     background-color: #0229c5;
+    background-image: url("109.png");
     position: fixed;
 }
 
 .color {
     background-image: url("background.jpg");
     background-repeat: round;
-    height: 100vh;
 }
 
 .page {
-    padding-top: 10%;
-    font-size: x-large;
+    padding-top: 8%;
+    font-size: xx-large;
 }
 
-ol{
+ol {
     padding-left: 10%;
 }
 
-ul{
-    padding-left: 10%;
-
-}
-
-img{
+img {
     width: 300px;
     height: 200px;
 }
@@ -53,8 +48,33 @@ img{
 
 .button:hover {
     cursor: pointer;
-    color: #0a5bff;
-    background-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color: transparent;
+    font-size: 28px ;
+}
+
+.leftButton {
+    color: #FFFFFF;
+    width: 7%;
+    float: left;
+    border: none;
+    border-radius: 5%;
+    text-decoration: none;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    background-color: #112268;
+}
+
+.leftButton:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: transparent;
+    font-size: 28px;
 }
 
 .login {
@@ -63,7 +83,6 @@ img{
     background-color: #112268;
     margin-top: 5%;
     margin-left: 35%;
-    padding-left: 5%;
     width: 29%;
     height: 40px;
 }
@@ -110,36 +129,13 @@ img{
 
 }
 
-.leftButton {
-    color: #FFFFFF;
-    width: 7%;
-    float: left;
-    border: none;
-    border-radius: 5%;
-    text-decoration: none;
-    padding-right: 1%;
-    padding-left: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    margin-left: 3%;
-    background-color: #112268;
-}
-
-.leftButton:hover {
-    cursor: pointer;
-    color: #0a5bff;
-    background-color: #FFFFFF;
-}
-
-.user{
+.user {
     font-size: 24px;
     color: #112268;
     padding-top: 2%;
 }
 
-.submit{
+.submit {
     width: 5%;
     background-color: #0229c5;
     border: none;
@@ -148,8 +144,14 @@ img{
     margin-top: 2%;
 }
 
-.actorName{
+.actorName {
     width: 20%;
     height: 40px;
     padding-left: 2%;
+}
+
+.rankLi {
+    font-size: 32px;
+    padding-top: 25px;
+    padding-left: 15px;
 }

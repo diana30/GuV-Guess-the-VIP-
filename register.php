@@ -8,7 +8,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repa
     $username = $_POST["username"];
     $password = $_POST["password"];
     $repassword = $_POST["repassword"];
-
+    
     $username = $conn->real_escape_string($username);
     $password = $conn->real_escape_string($password);
     $repassword = $conn->real_escape_string($repassword);

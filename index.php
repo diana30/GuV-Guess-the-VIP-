@@ -22,17 +22,17 @@ include "core/users.php";
     <div class="page">
         <h1> Top 10 player</h1>
         <ol>
-            <li>SiminaC</li>
-            <li>DianaD</li>
-            <li>RalucaG</li>
-            <li>BocaB</li>
-            <li>RizaA</li>
-            <li>IrinaD</li>
-            <li>CosminaC</li>
-            <li>Popescu</li>
-            <li>Ionescu</li>
-            <li>Petrescu</li>
+        <?php
+        $query = "select username, score from `twusers` WHERE usertype != 'admin' order by 2 desc LIMIT 0,10 ";
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<li>'.$row["username"] . '  ' . $row["score"].' puncte</li>';
+            }
+        }
+        ?>
         </ol>
+
     </div>
 </div>
 

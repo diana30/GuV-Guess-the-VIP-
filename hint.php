@@ -1,6 +1,4 @@
 <?php
-?>
-<?php
 include "core/database/connection.php"
 ?>
 <!DOCTYPE html>

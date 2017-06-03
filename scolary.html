@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title charset="UTF-8">
+        Scolary
+    </title>
+</head>
+<body>
+
+<center><h1>Guess the VIP</h1></center>
+
+Acest raport descrie curentul progress la proiectul numit "Guess the VIP" care va fi evaluata la disciplina Tehnologi Web promotia 2016-2017. 
+Participanti la crearea acestui proiect sunt, Diana Andrian A6 II &#351;i Simina Adela Covatariu A6 II.  
+<h3>1.Introducere</h3>
+Sa se dezvolte o aplicatie Web care permite utilizatorilor ghicirea numelor unor personalitati celebre cu ajutorul imaginilor (preluate local sau folosind un serviciu online precum Flickr ori Instagram), fie prin tastarea directa a numelor (gen Spanzuratoarea), fie prin apelarea la metode ajutatoare (i.e. variante de alegeri). Utilizatorii autentificati vor avea la dispozitie un istoric al punctajelor proprii obtinute pe baza sesiunilor de joc. Clasamentele vor putea fi facute publice in formate ca Atom, CSV, JSON si HTML.
+
+Utilizatori &#206;nregistrat
+	Utilizatorul &#206;nregistrat va putea beneficia de aplica&#355;ie. Va putea ghicii numele unor vedete dupa fotografia lor. La ghicirea lor se va acumula un punctaj
+Utilizator fara cont
+	Utilizatorul fara cont nu va putea accesa aplicatia. Va putea vizualiza doar username-uri-le primilor 10 utilizatori din aplica&#355;ie.
+Administratorul
+	Administratorul va putea ad&#259;uga noi fotografi cu celebrit&#259;&#355;i. Se vor genera fi&#351;iere de tip Atom, CSV, JSON si HTML.
+<h3>2. Etapele dezvoltarii proiectului</h3>
+
+1.	Modelare baza de date ()<br>
+2.	Creare pagini frontend ()<br>
+3.	Design proceduri My SQL ()<br>
+4.	Design & implementare ()<br>
+5.	Implementare proceduri MySQL()<br>
+6.	Implementarea view-urilor pe baza html&css&javascript ()<br>
+7.	Deployment<br>
+
+
+
+<h3>3.Tehnologi utilizate</h3>
+	&#206;n acest proiect vom folosi urmatoarele tehnologii de dezvoltare web
+HTML5 - este un limbaj pentru structurarea &#351;i prezentarea con&#355;inutului pentru World Wide Web.
+
+Javascript - este un limbaj de programare orientat obiect bazat pe conceptul prototipurilor.Este folosit mai ales pentru introducerea unor func&#355;ionalit&#259;&#355;i &#206;n paginile web, codul Javascript din aceste pagini fiind rulat de c&#259;tre browser.
+
+CSS - (Cascading Style Sheets) este un standard pentru formatarea elementelor unui document HTML. Stilurile se pot ata&#351;a elementelor HTML prin intermediul unor fi&#351;iere externe sau &#206;n cadrul documentului.
+
+PHP - Hypertext Preprocessor. Folosit ini&#355;ial pentru a produce pagini web dinamice, este folosit pe scar&#259; larg&#259; &#206;n dezvoltarea paginilor &#351;i aplica&#355;iilor web. Se folose&#351;te &#206;n principal &#206;nglobat &#206;n codul HTML . Este disponibil sub Licenṭa PHP ṣi Free Software Foundation &#206;l consider&#259; a fi un software liber.
+
+<h3>4.MySQL pentru baza de dat</h3>
+- <b>twusers</b>: tabela &#206;n care se g&#259;sesc toti utilizatorii<br>
+	- id<br>
+	- username<br>
+	- password<br>
+	- usertype<br>
+	- score <br>
+- <b>twimage</b>: tabela &#206;n care se g&#259;sesc informa&#355;ii cu fotografiile ce vor fi afi&#351;ate<br>
+	- id<br>
+	- actorName <br>
+	- description<br>
+	- imagine  <br>
+<h3>5. Structura</h3>
+
+<br>Pagina de pornire<br>
+
+Pe prima pagina va fi un navbar cu doua butoane:<br>
+- login<br>
+- register<br>
+
+Background-ul va contine o imagine si un top cu cei mai buni utilizatori .<br>
+
+<br>Pagina de login<br>
+Un formular cu urm&#259;toarele c&#226;mpuuri:<br>
+-	Usename<br>
+-	Password<br>
+Daca aceste doua c&#226;mpuri sunt valide (exist&#259; &#206;n baza de date) utilizatorul va fi redirectionat catre o alt&#259; pagin&#259;.<br>
+
+<br>Pagina de &#206;nregistrare utilizator <br>
+Un formular cu urm&#259;toarele c&#226;mpuri:<br>
+- Username<br>
+- Password <br>
+- Confirm Password<br>
+Dac&#259; Username-ul este valid (nu mai exist&#259; un alt utilizator cu acest username) &#351;i urm&#259;toarele dou&#259; c&#226;mpuri sunt identice &#351;i au o lungime mai mare de 6 caractere, se va crea un nou user cu parola din c&#226;mpul Password.<br>
+<br>Pagina de administrator <br>
+Un formular unde administratorul insereaz&#259; &#206;n baza de date noi imagini cu celebrit&#259;&#355;i, numele acestora &#351;i un indiciu ajut&#259;tor pentru user (hint-uri).<br>
+
+<br>Pagina de rank <br>
+Pe aceast&#259; pagin&#259; useru-ul va avea posibilitatea de a se reg&#259;si &#206;ntr-un top &#351;i va putea vizualiza punctajele celorlal&#355;i utilizatori.<br>
+
+<br>Pagina de joc <br>
+Pe aceast&#259; pagina utilizatorul va acumula puncte &#206;ncerc&#226;nd s&#259; ghiceasc&#259; numele persoanei din imaginea care &#206;i este afi&#351;at&#259;. Are la dispozi&#355;ie doar 3 &#206;ncerc&#259;ri, fiecare &#206;ncercare gre&#351;it&#259; &#206;i va aduce o penalizare de 2 puncte, dac&#259; nu &#351;tie cine este persoana din imagine, poate folosi butonul de hint care &#206;i va aduce o penalizare de 5 puncte. Un r&#259;spuns corect este contorizat cu 10 puncte.
+
+
+</body>
+</html>
