@@ -61,7 +61,7 @@ function getQuestion($id)
     $sql = "SELECT question FROM `twusers` WHERE id='" . $id . "'";
     $rezult = $conn->query($sql);
     $rezult = $rezult->fetch_assoc();
-    return $rezult['question']-1;
+    return $rezult['question'];
 }
 
 function getScore($id)
@@ -80,11 +80,28 @@ function getUserRank($id)
     $rezult = $conn->query($sql);
     $place = 0;
     while ($row = $rezult->fetch_assoc()) {
-        if($row['id']!= $id)
-            $place ++;
-        else return $place+1;
+        if ($row['id'] != $id)
+            $place++;
+        else return $place + 1;
     }
-    return $place+1;
+    return $place + 1;
+}
+
+function useHint($id)
+{
+    global $conn;
+    $sql = "UPDATE `twusers` SET score = score - 5 WHERE id = " . $id;
+    $conn->query($sql);
+}
+
+function admin_page($name) {
+    global $conn;
+    $sql = "SELECT COUNT(id) FROM `twusers` WHERE username = '" . $name . "' AND usertype = 'admin'";
+    $rezult = $conn->query($sql);
+    $rezult = $rezult->fetch_assoc();
+    if ($rezult['COUNT(id)'] == 1)
+        return true;
+    else return false;
 }
 
 ?>

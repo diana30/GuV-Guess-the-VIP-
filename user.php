@@ -26,7 +26,7 @@ include "core/users.php";
             <li class="user"> username: <?php echo  getNameById($_SESSION["logat"]) ;?> </li>
         <li class="user"> intrebari raspunse: <?php echo  getQuestion($_SESSION["logat"]) ;?> </li>
         <li class="user"> scor :  <?php echo  getScore($_SESSION["logat"]) ;?> puncte</li>
-        <li class="user"> Te afli pe locul <?php echo getUserRank($_SESSION["logat"]) ?>.</li>
+        <li class="user"> Te aflii pe locul <?php echo getUserRank($_SESSION["logat"]) ?>.</li>
         </ul>
     </div>
 </div>

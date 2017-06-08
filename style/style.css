@@ -7,7 +7,7 @@
     width: 100%;
     background-color: #0229c5;
     background-image: url("109.png");
-    position: fixed;
+    position: absolute;
 }
 
 .color {
@@ -121,10 +121,9 @@ img {
     width: 15%;
     font-size: 40px;
     font-family: "Calibri";
-    background-color: #87CEFA;
+    background-color: rgb(2, 41, 197);
     border: none;
     border-radius: 5%;
-    margin-bottom: 3%;
     text-decoration: none;
 
 }
@@ -142,6 +141,7 @@ img {
     border-radius: 5%;
     height: 40px;
     margin-top: 2%;
+    margin-bottom: 1.5%;
 }
 
 .actorName {
@@ -154,4 +154,17 @@ img {
     font-size: 32px;
     padding-top: 25px;
     padding-left: 15px;
+}
+
+.image {
+    width: 250px;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 15px 15px 5px #2c2c2c;
+}
+
+.image:hover{
+    width: auto;
+    height: auto;
 }

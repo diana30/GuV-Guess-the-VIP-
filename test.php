@@ -1,5 +1,6 @@
 <?php
 require_once "core/database/connection.php";
+include "core/users.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +14,9 @@ require_once "core/database/connection.php";
 </head>
 <body>
 
-
-<script src=""
-<script>
-
+<?php
+echo getQuestion(2);
+?>
 
 </script>
 </body>

@@ -1,11 +1,37 @@
 <?php
+require_once "core/database/connection.php";
+include "core/users.php";
 $error = array();
+
+if (admin_page( getNameById($_SESSION["logat"])) == false)
+    header("Location: user.php");
+else {
+    if (isset($_POST['upload'])) {
+        $isImage = true;
+        $imageFileType = pathinfo("image/" . basename($_FILES['image']['name']), PATHINFO_EXTENSION);
+        $image = $_FILES['image']['name'];
+        $allowed = array('gif', 'png', 'jpg', 'jpeg');
+        $actorName = $_POST['actorName'];
+        $description = $_POST['description'];
+        if (!in_array($imageFileType, $allowed)) {
+            $isImage = false;
+        }
+        if (($description == true) && ($isImage == true)) {
+            move_uploaded_file($_FILES['image']['tmp_name'], "image/" . $_FILES["image"]["name"]);
+            $query = $conn->query("INSERT INTO `twimage` (actorName, description, image) VALUE ('$actorName', '$description','$image' )");
+            header('Location: adminInsert.php?Succesfull insert!');
+        } else {
+            array_push($error, " You need to insert a <b>image</b>");
+        }
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>
-        Insert questions
+        Insert photo
     </title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">
@@ -13,13 +39,15 @@ $error = array();
 <body>
 
 <header class="header">
-    <a href="index.php" class="button"> Home </a>
+    <a href="logout.php" class="button"> Logout </a>
+    <a href="adminRegister.php" class="button"> Register </a>
+    <a href="user.php" class="leftButton"> Home </a>
 </header>
 
 
 <div>
     <center>
-        <form method="post" class="page">
+        <form method="POST" class="page" enctype="multipart/form-data">
             <div>
                 <input type="file" name="image" class="input">
             </div>
@@ -27,7 +55,7 @@ $error = array();
                 <input type="text" name="actorName" placeholder="Name of the person" class="input">
             </div>
             <div>
-                <textarea name="description" placeholder="Description of the actor (hint)" cols="40" rows="4" class="input"></textarea>
+                <textarea name="description" placeholder="Description of the actor (hint)" cols="1000" rows="4" class="input"></textarea>
             </div>
 
             <p class="error"> <?php
@@ -42,4 +70,3 @@ $error = array();
 
 </body>
 </html>
-

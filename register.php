@@ -21,7 +21,12 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repa
         else {
             $sql = " INSERT INTO `twusers` (username,password) VALUES ( '$username','$password' )  ";
             $conn->query($sql);
-            header("Location: index.php?message=Successfully registered");
+            $sql = "SELECT id FROM `twusers` WHERE username = " . $username;
+            $result = $conn->query($sql);
+            $result = $result->fetch_assoc();
+            $sql = "INSERT INTO `wrong`(`user_id`, `photo_id`) VALUES ( " . $result['id'] .  ", 1 )";
+            $conn->query($sql);
+            header("Location: index.php");
         }
     }else array_push($err, "Passwords don't match");
 
