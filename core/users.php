@@ -16,11 +16,10 @@ function protect_page()
     }
 }
 
-function logout()
-{
-    if (checkLogin() == true) {
-        session_destroy();
-        header("Location: index.php?message=Successfully logouted");
+function logged_in_redirect(){
+     if (checkLogin() === true) {
+        header("Location: user.php");
+        exit();
     }
 }
 

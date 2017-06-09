@@ -42,6 +42,7 @@ else {
     <a href="logout.php" class="button"> Logout </a>
     <a href="adminRegister.php" class="button"> Register </a>
     <a href="user.php" class="leftButton"> Home </a>
+    <a href="generare.php" class="leftButton">Generare</a>
 </header>
 
 
@@ -65,6 +66,7 @@ else {
             </p>
             <button type="submit" name="upload" value="Save" class="login">Post</button>
         </form>
+        
     </center>
 </div>
 

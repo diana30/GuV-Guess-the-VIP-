@@ -47,6 +47,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repa
 <header class="header">
     <a href="login.php" class="button">Login </a>
     <a href="index.php" class="button"> Home </a>
+	<a href="adminInsert.php" class="leftButton"> Insert </a>
 </header>
 <form action="" method="POST"  class="page">
     <center> <h1 class="user"> Admin registration</h1> </center>
