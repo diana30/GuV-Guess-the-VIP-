@@ -1,6 +1,7 @@
 <?php
 include "core/database/connection.php";
 include "core/users.php";
+logged_in_redirect();
 ?>
 <!DOCTYPE html>
 <html lang="en">

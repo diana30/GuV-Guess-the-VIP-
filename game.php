@@ -10,25 +10,25 @@ $error = array();
 if (isset($_POST["actorName"])) {
     $actorName = $_POST["actorName"];
     if (strtolower($actorName) ===  strtolower($result["actorName"])) {
+        array_push($error, "<p class='message'>Good job</p><br>");
         $sql = "UPDATE `twusers` SET score = score + 10, question = question + 1 WHERE id = " . $_SESSION["logat"];
         $conn->query($sql);
         $sql = "INSERT INTO `wrong`(`user_id`, `photo_id`) VALUES ( " . $_SESSION["logat"] . "," . $result['actorName'] + 1 . " )";
         $conn->query($sql);
-        array_push($error, "<p class='message'>Good job</p><br>");
         $q_id = getQuestion($_SESSION["logat"]);
         $sql = "SELECT * FROM `twimage` WHERE id = " . $q_id;
         $result = $conn->query($sql);
         $result = $result->fetch_assoc();
     } else {
-        array_push($error ,"<p class='message'>Wrong !<br> Try again</p><br>");
+        array_push($error ,"<p class='message'>Wrong !</p>");
         $sql = "UPDATE `twusers` SET score = score - 5 WHERE id = " . $_SESSION["logat"];
         $conn->query($sql);
         $sql = "UPDATE `wrong` SET `errors`= `errors`-1 WHERE user_id = " . $_SESSION["logat"] . " AND photo_id =" . $q_id;
         $conn->query($sql);
         $sql = "SELECT * FROM `wrong` WHERE user_id = " . $_SESSION["logat"] . " AND photo_id =" . $q_id;
-        $result = $conn->query($sql);
-        $result = $result->fetch_assoc();
-        if ( $result["errors"] == 0 ){
+        $res = $conn->query($sql);
+        $res = $res->fetch_assoc();
+        if ( $res["errors"] == 0 ){
             $sql = "UPDATE `twusers` SET question = question + 1 WHERE id = " . $_SESSION["logat"];
             $conn->query($sql);
             $sql = "INSERT INTO `wrong`(`user_id`, `photo_id`) VALUES ( " . $_SESSION["logat"] . "," . $result['actorName'] + 1 . " )";
