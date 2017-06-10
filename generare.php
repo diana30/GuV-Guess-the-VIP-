@@ -33,12 +33,11 @@ $pdf->Ln();
 $pdf->Cell(450,7,"----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 $pdf->Ln();
 foreach ($results_post as $pdf_row) {
-	
-
 	$id = $pdf_row["user_id"];
 	$username =  $pdf_row["username"];
 	$desc =  $pdf_row["score"];
 	$desc .= " points";
+	//afisare
 	$pdf->Cell(25,7,$id);
 	$pdf->Cell(30,7,$username);
 	$pdf->Cell(40,7,$desc);

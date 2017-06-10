@@ -1,6 +1,7 @@
 <?php
 include "core/database/connection.php";
 include "core/users.php";
+protect_page();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,12 +22,11 @@ include "core/users.php";
 </header>
 <div class="color">
     <div class="page">
-		<p class="message"> <b><?php if (isset($_GET['message'])) echo $_GET['message']; ?> </b></p>
         <ul>
-            <li class="user"> username: <?php echo  getNameById($_SESSION["logat"]) ;?> </li>
-        <li class="user"> intrebari raspunse: <?php echo  getQuestion($_SESSION["logat"]) ;?> </li>
-        <li class="user"> scor :  <?php echo  getScore($_SESSION["logat"]) ;?> puncte</li>
-        <li class="user"> Te aflii pe locul <?php echo getUserRank($_SESSION["logat"]) ?>.</li>
+            <li class="user"> username: <?php echo getNameById($_SESSION["logat"]); ?> </li>
+            <li class="user"> intrebari raspunse: <?php echo getQuestion($_SESSION["logat"]); ?> </li>
+            <li class="user"> scor : <?php echo getScore($_SESSION["logat"]); ?> puncte</li>
+            <li class="user"> Te aflii pe locul <?php echo getUserRank($_SESSION["logat"]) ?>.</li>
         </ul>
     </div>
 </div>

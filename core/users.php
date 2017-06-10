@@ -11,16 +11,28 @@ function checkLogin()
 function protect_page()
 {
     if (checkLogin() == false) {
-        header('Location: login.php');
+        header('Location: index.php');
         exit();
     }
 }
 
-function logged_in_redirect(){
-     if (checkLogin() === true) {
+function logged_in_redirect()
+{
+    if (checkLogin() === true) {
         header("Location: user.php");
         exit();
     }
+}
+
+function admin_page($name)
+{
+    global $conn;
+    $sql = "SELECT COUNT(id) FROM `twusers` WHERE username = '" . $name . "' AND usertype = 'admin'";
+    $rezult = $conn->query($sql);
+    $rezult = $rezult->fetch_assoc();
+    if ($rezult['COUNT(id)'] == 1)
+        return true;
+    else return false;
 }
 
 function userExist($name)
@@ -93,14 +105,5 @@ function useHint($id)
     $conn->query($sql);
 }
 
-function admin_page($name) {
-    global $conn;
-    $sql = "SELECT COUNT(id) FROM `twusers` WHERE username = '" . $name . "' AND usertype = 'admin'";
-    $rezult = $conn->query($sql);
-    $rezult = $rezult->fetch_assoc();
-    if ($rezult['COUNT(id)'] == 1)
-        return true;
-    else return false;
-}
 
 ?>

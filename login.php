@@ -1,6 +1,7 @@
 <?php
 include "core/database/connection.php";
 include "core/users.php";
+logged_in_redirect();
 if (checkLogin() == true)
     header("Location: user.php");
 else {
@@ -12,6 +13,7 @@ else {
 
         $username = $conn->real_escape_string($username);
         $password = $conn->real_escape_string($password);
+        $password = md5($password);
 
         $sql = " SELECT count(id), usertype FROM `twusers` WHERE username='" . $username . "' and password = '" . $password . "'";
         $rezult = $conn->query($sql);
@@ -52,7 +54,7 @@ else {
 <div>
     <form action="" method="post" class="page">
 
-        <input class="input" type="text" placeholder="Usernane" name="username"><br>
+        <input class="input" type="text" placeholder="Username" name="username"><br>
         <input class="input" type="password" placeholder="Password" name="password"><br>
         <p class="error"> <?php
             foreach ($err as $error)

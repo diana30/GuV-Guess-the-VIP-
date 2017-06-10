@@ -2,7 +2,7 @@
 
 include "core/database/connection.php";
 include "core/users.php";
-
+logged_in_redirect();
 $err = array();
 if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repassword"])) {
     $username = $_POST["username"];
@@ -19,9 +19,10 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repa
         if (strlen($password) < 6)
             array_push($err, "Your password is too short");
         else {
+            $password = md5($password);
             $sql = " INSERT INTO `twusers` (username,password) VALUES ( '$username','$password' )  ";
             $conn->query($sql);
-            $sql = "SELECT id FROM `twusers` WHERE username = " . $username;
+            $sql = "SELECT id FROM `twusers` WHERE username = '" . $username . "'";
             $result = $conn->query($sql);
             $result = $result->fetch_assoc();
             $sql = "INSERT INTO `wrong`(`user_id`, `photo_id`) VALUES ( " . $result['id'] .  ", 1 )";
@@ -29,11 +30,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repa
             header("Location: index.php");
         }
     }else array_push($err, "Passwords don't match");
-
-
 }
-
-
 ?>
 
 <!DOCTYPE html>

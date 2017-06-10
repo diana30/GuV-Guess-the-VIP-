@@ -1,6 +1,8 @@
 <?php
 require_once "core/database/connection.php";
 include "core/users.php";
+protect_page();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,12 +28,12 @@ include "core/users.php";
         $count = $conn->query("SELECT count(*) as nr from `twusers`");
         $count = $count->fetch_assoc();
         $number = $count['nr'];
-        $query = "select username, score from `twusers` WHERE usertype != 'admin' order by score desc LIMIT 0,10";
+        $query = "select username, score from `twusers` WHERE usertype != 'admin' order by score desc LIMIT 0,12";
         $result = $conn->query($query);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 if (getNameById($_SESSION["logat"]) == $row["username"])
-                    echo '<li class="rankLi message">' . $row["username"] . '  ' . $row["score"] . ' puncte</li>';
+                    echo '<li class="message">' . $row["username"] . '  ' . $row["score"] . ' puncte</li>';
                 else
                     echo '<li class="rankLi">' . $row["username"] . '  ' . $row["score"] . ' puncte</li>';
             }

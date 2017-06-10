@@ -1,17 +1,17 @@
 <?php
-
 include "core/database/connection.php";
 include "core/users.php";
+protect_page();
 $err = array();
 if (isset($_POST["curPass"]) && isset($_POST["password"]) && isset($_POST["repassword"])) {
     $curPass = $_POST["curPass"];
     $password = $_POST["password"];
     $repassword = $_POST["repassword"];
     $id = $_SESSION["logat"];
-	echo $id;
     $curPass = $conn->real_escape_string($curPass);
     $password = $conn->real_escape_string($password);
     $repassword = $conn->real_escape_string($repassword);
+    $curPass = md5($curPass);
 
     $sql = "SELECT password FROM `twusers` WHERE id = $id";
     $oldPass = $conn->query($sql);
@@ -24,9 +24,10 @@ if (isset($_POST["curPass"]) && isset($_POST["password"]) && isset($_POST["repas
         if (strlen($password) < 6)
             array_push($err, "Your password is too short");
         else {
+            $password = md5($password);
             $sql = " UPDATE `twusers` SET password = '$password' WHERE id = $id ";
             $conn->query($sql);
-            header("Location: user.php?message=Password changed");
+            header("Location: user.php");
         }
     } else array_push($err, "Passwords don't match");
 }

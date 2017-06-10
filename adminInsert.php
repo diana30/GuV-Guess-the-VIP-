@@ -13,6 +13,8 @@ else {
         $allowed = array('gif', 'png', 'jpg', 'jpeg');
         $actorName = $_POST['actorName'];
         $description = $_POST['description'];
+        $actorName = $conn->real_escape_string($actorName);
+        $description = $conn->real_escape_string($description);
         if (!in_array($imageFileType, $allowed)) {
             $isImage = false;
         }
@@ -21,7 +23,7 @@ else {
             $query = $conn->query("INSERT INTO `twimage` (actorName, description, image) VALUE ('$actorName', '$description','$image' )");
             header('Location: adminInsert.php?Succesfull insert!');
         } else {
-            array_push($error, " You need to insert a <b>image</b>");
+            array_push($error, " You need to insert an <b>image</b>");
         }
     }
 }
@@ -42,12 +44,12 @@ else {
     <a href="logout.php" class="button"> Logout </a>
     <a href="adminRegister.php" class="button"> Register </a>
     <a href="user.php" class="leftButton"> Home </a>
-    <a href="generare.php" class="leftButton">Generare</a>
+    <a href="generare.php" class="leftButton">Generare top 10</a>
+    <a href="generate1.php" class="leftButton">Generare question</a>
 </header>
 
 
 <div>
-    <center>
         <form method="POST" class="page" enctype="multipart/form-data">
             <div>
                 <input type="file" name="image" class="input">
@@ -66,8 +68,6 @@ else {
             </p>
             <button type="submit" name="upload" value="Save" class="login">Post</button>
         </form>
-        
-    </center>
 </div>
 
 </body>

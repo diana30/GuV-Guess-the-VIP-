@@ -18,6 +18,5 @@ include "core/users.php";
 echo getQuestion(2);
 ?>
 
-</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-include "core/database/connection.php";
+require_once "core/database/connection.php";
 include "core/users.php";
 
 if (admin_page( getNameById($_SESSION["logat"])) == false)
@@ -14,16 +14,16 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repa
     $username = $conn->real_escape_string($username);
     $password = $conn->real_escape_string($password);
     $repassword = $conn->real_escape_string($repassword);
-
     if (userExist($username) == true)
         array_push($err, "Username arlready exist");
     if ($password == $repassword) {
         if (strlen($password) < 6)
             array_push($err, "Your password is too short");
         else {
-            $sql = " INSERT INTO `twusers` VALUES (NULL, '$username','$password', '0' ,'admin')  ";
+            $password = md5($password);
+            $sql = " INSERT INTO `twusers` VALUES (NULL, '$username','$password', '0' ,'admin', '1')  ";
             $conn->query($sql);
-            header("Location: index.php?message=Successfully registered");
+            header("Location: user.php?message=Successfully registered");
         }
     }else array_push($err, "Passwords don't match");
 
@@ -45,7 +45,6 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["repa
 <body>
 
 <header class="header">
-    <a href="login.php" class="button">Login </a>
     <a href="index.php" class="button"> Home </a>
 	<a href="adminInsert.php" class="leftButton"> Insert </a>
 </header>
